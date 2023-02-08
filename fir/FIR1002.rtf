@@ -1,0 +1,243 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "{{\field{\*\fldinst{HYPERLINK http://www.w3.org/TR/html4/loose.dtd }}{\fldrslt{http://www.w3.org/TR/html4/loose.dtd\ul0\cf0}}}}\f0\fs22 ">\par
+<html>\par
+<head>\par
+<title>Untitled Document</title>\par
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">\par
+</head>\par
+\par
+<body>\par
+<?php include ("p4.php"); ?>\par
+\par
+<table width="946" border="0" cellpadding="0" cellspacing="0">\par
+  <!--DWLayoutTable-->\par
+  <tr>\par
+    <td width="149" height="44">&nbsp;</td>\par
+    <td colspan="5" valign="top"><div align="center"><strong> Case Approval </strong></div></td>\par
+    <td width="81">&nbsp;</td>\par
+    <td width="29">&nbsp;</td>\par
+    <td width="247">&nbsp;</td>\par
+    <td width="33">&nbsp;</td>\par
+  </tr>\par
+  <tr>\par
+    <td colspan="2" rowspan="2" valign="top"><?php\par
+\tab $s1=$_POST["t1"];\par
+\tab\tab $s2=$_POST["r1"];\par
+\tab\tab\tab $s3=$_POST["t2"];\par
+\tab\tab\tab $s4=$_POST["c1"];\par
+\tab\tab\tab\par
+\tab\tab\tab session_start();\par
+\tab\tab\tab $pid=$_SESSION["pid"];\par
+\tab\tab\tab $pstaffid=$_SESSION["Pstaffid"];\par
+\tab\tab\tab\par
+\tab\tab\tab include("connection.php");\par
+\tab\tab  $s=mysql_query("select * from capplication a,capproval b where a.applno=b.applno and b.pid='$pid' and b.permission is null");\par
+\tab\tab\tab if(mysql_num_rows($s)==0)\par
+\tab\tab\tab echo"<b> No New Cases....";\par
+\tab\tab\tab else\par
+\tab\tab\tab\{\par
+\tab\tab\tab echo"<table border='1'  width='100%'  bgcolor='#ooffaa''><tr><th>Application no</th><th>Casedate</th><th>Redirect date</th><th>click</th></tr>";\par
+\tab\tab\tab while($row=mysql_fetch_array($s))\par
+\tab\tab\tab\{\par
+\tab\tab\tab if($s1==$row[0])\par
+\tab\tab\tab\tab echo"<tr align='center' bgcolor='#00bbcc'><td>$row[0]</td><td>$row[2]</td><td>$row[7]</td><td><form action='viewnewcase22.php' method='post'><input type='hidden' name='t1' value='$row[0]'><input type='submit' value='View' disabled></form></td></tr>"; \par
+\tab\tab\tab else\par
+\tab\tab\tab\par
+\tab\tab\tab echo"<tr align='center' bgcolor='#aabbcc'><td>$row[0]</td><td>$row[2]</td><td>$row[7]</td><td><form action='viewnewcase22.php' method='post'><input type='hidden' name='t1' value='$row[0]'><input type='submit' value='View'></form></td></tr>";\par
+\tab\tab\tab\}\par
+\tab\tab\tab echo"</table>";\par
+\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\tab ?>      &nbsp;</td>\par
+    <td width="11" height="20">&nbsp;</td>\par
+    <td width="160" rowspan="3" valign="top">Details\par
+      <?php\par
+\tab\tab $s=mysql_query("select* from capplication a,useraddress b  where a.eno=b.eno and a.applno=$s1");\par
+\tab\tab if($row=mysql_fetch_array($s))\par
+\tab\tab\{\par
+\tab\tab $name=$row[6];\par
+\tab\tab $hname=$row[7];\par
+\tab\tab $place=$row[8];\par
+\tab\tab $pin=$row[9];\par
+\tab\tab $phone=$row[10];\par
+\tab\tab $sex=$row[11];\par
+\tab\tab $dist=$row[12];\par
+\tab\tab $email=$row[13];\par
+\tab\tab $age=$row[14];\par
+\tab\tab $regdate=$row[15];\par
+\tab\tab $cdate=$row[2];\par
+\tab\tab $complaint=$row[3];\par
+\tab\tab\par
+\tab\tab\}\par
+\tab\tab ?>\par
+      <table width="155" height="252" border="3">\par
+        <!--DWLayoutTable-->\par
+        <tr>\par
+          <td>Appl No </td>\par
+          <td><?php echo $s1; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td width="83">Name</td>\par
+          <td width="52"><?php echo $name; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>House name </td>\par
+          <td><?php echo $hname; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>Place</td>\par
+          <td><?php echo $place; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>Pin</td>\par
+          <td><?php echo $pin; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>Phone</td>\par
+          <td><?php echo $phone; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>Sex</td>\par
+          <td><?php echo $sex; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>District</td>\par
+          <td><?php echo $dist; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td>Email</td>\par
+          <td><?php echo $email; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td height="23">Age</td>\par
+          <td><?php echo $age; ?>&nbsp;</td>\par
+        </tr>\par
+              </table></td>\par
+    <td width="10">&nbsp;</td>\par
+    <td width="166">&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td rowspan="2" valign="top"><p>&nbsp;</p>      <form action="viewnewcase44.php" method="post" enctype="multipart/form-data" name="form2">\par
+        <table width="190" border="3">\par
+          <!--DWLayoutTable-->\par
+          <tr>\par
+            <td width="65">permission</td>\par
+            <td width="115"><?php\par
+\tab\tab\tab echo $s2;\par
+\tab\tab\tab echo "<input type='hidden'  name='r1' value='$s2'>";\par
+\tab\tab\tab ?>&nbsp;</td>\par
+          </tr>\par
+          <tr>\par
+            <td colspan="2"><div align="center">Comment</div></td>\par
+          </tr>\par
+          <tr>\par
+            <td colspan="2"><textarea name="t2" id="t2"><?php echo $s3; ?></textarea></td>\par
+          </tr>\par
+          <tr>\par
+            <td colspan="2"><div align="center">\par
+\tab\tab\tab <?php \par
+\tab\tab\tab $pdate=date("y")."-".date("m")."-".date("d");\par
+\tab\tab\tab //$s="update capproval set permission='$s2',pdate='$pdate',pstaffid='$pstaffid',comment='$s3' where applno=$s1";\par
+\tab\tab\tab //mysql_query($s);\par
+\tab\tab\tab //echo"process success";\par
+\tab\tab\tab ?></div></td>\par
+          </tr>\par
+        </table>\par
+\tab\tab <?php\par
+\tab\tab echo "<input type='hidden' name='t1' value='$s1'>";\par
+\tab\tab ?>\par
+\tab\tab <?php\par
+\tab\tab if($s2=="Y")\par
+\tab\tab\{\par
+\tab\tab\par
+\tab\tab ?><table width="198" border="3">\par
+          <tr>\par
+            <td width="56">select case type </td>\par
+            <td width="122"><?php echo $s4; ?>&nbsp;</td>\par
+          </tr>\par
+          <tr>\par
+            <td>select FIR </td>\par
+            <td>Uploaded</td>\par
+          </tr>\par
+          <tr>\par
+            <td colspan="2"><?php\par
+\tab\tab\tab $firno="FIR1000";\par
+\tab\tab\tab $s=mysql_query("select * from \tab fir order by FIRNo desc");\par
+\tab\tab\tab if($row=mysql_fetch_array($s))\par
+\tab\tab\tab\{\par
+\tab\tab\tab $firno=$row[0];\par
+\tab\tab\tab\}\par
+\tab\tab\tab $firno++;\par
+\tab\tab\tab $Filename=$_FILES["file"]["name"];\par
+\tab\tab\tab $x=split("[.]",$Filename);\par
+\tab\tab\tab $n=count($x);\par
+\tab\tab\tab $n--;\par
+\tab\tab\tab $ext = $x[$n];\par
+\tab\tab\tab $filename="$firno.$ext";\par
+\tab\tab\tab move_uploaded_file($_FILES["file"]["tmp_name"],"./fir/$filename");\par
+\tab\tab\tab $s="insert into fir values('$firno',$s1,'$pdate','$pstaffid','$s4','$filename')";\par
+\tab\tab\tab mysql_query($s);\par
+\tab\tab\tab echo" Fir succesfully uploaded...The FIR No is $firno";\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab ?>&nbsp;</td>\par
+          </tr>\par
+        </table>  \par
+\tab\tab <?php\par
+\tab\tab\}\par
+\tab\tab ?>  \par
+    </form>      <p>&nbsp;</p></td>\par
+    <td>&nbsp;</td>\par
+  </tr>\par
+  <tr>\par
+    <td height="377">&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td colspan="2" valign="top"><table width="235" border="3" align="center">\par
+        <!--DWLayoutTable-->\par
+        <tr>\par
+          <td height="23" colspan="2"><div align="center">Complaint</div></td>\par
+        </tr>\par
+        <tr>\par
+          <td height="74" colspan="2"><textarea name="textarea" cols="30"><?php echo $complaint; ?></textarea></td>\par
+        </tr>\par
+        <tr>\par
+          <td width="131" height="23">Date</td>\par
+          <td width="65"><?php echo $regdate; ?>&nbsp;</td>\par
+        </tr>\par
+        <tr>\par
+          <td height="23" colspan="2">Admin instruction </td>\par
+        </tr>\par
+        <tr>\par
+          <td height="74" colspan="2" valign="top"><form name="form1" method="post" action="">\par
+            <?php\par
+\tab\tab $s=mysql_query("select * from capproval where applno=$s1");\par
+\tab\tab if($row=mysql_fetch_array($s))\par
+\tab\tab\{\par
+\tab\tab $admcomment=$row[3];\par
+\tab\tab\}\par
+\tab\tab\par
+\tab\tab ?>  <textarea name="textarea2"><?php echo $admcomment; ?></textarea>\par
+          </form></td>\par
+        </tr>\par
+                                                        </table></td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+  </tr>\par
+  <tr>\par
+    <td height="19">&nbsp;</td>\par
+    <td width="60">&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+    <td>&nbsp;</td>\par
+  </tr>\par
+</table>\par
+</body>\par
+</html>\par
+}
+ 

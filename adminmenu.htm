@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+
+.navbar {
+  overflow: hidden;
+  background-color:#ffffff;
+  padding-left: 10%;
+}
+
+.navbar a {
+  float: left;
+  font-size: 14px;
+  color:#000000;
+  text-align: center;
+  padding:14px;
+  text-decoration: none;
+  outline: none;
+  font-weight:bold;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color:#000000;
+  font-weight: bold;
+  padding: 14px 12px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:#6600FF;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#00FFFF;
+  min-width: 140px;
+  
+  box-shadow: 0px 8px 12px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:#FFFF00;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+
+</head>
+<script>
+function signout()
+{
+window.open("adlogin1.php");
+self.close();
+
+}
+
+</script>
+<body>
+<div class="navbar">
+  <a href="adpasschange1.php">Change Password</a>
+  <div class="dropdown">
+    <button class="dropbtn">Registration 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="crimetypereg1.php">Crime Type</a>
+      <a href="preg1.php">Police Station</a>
+      <a href="adminstaffregn.php">Admin Staff</a>
+      <a href="policestationstaffregn.php">Police Station Staff</a>
+      
+    </div>
+  </div> 
+   
+
+    <div class="dropdown">
+    <button class="dropbtn">Feedback Reply
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="freply1.php">To Admin Staff</a>
+      <a href="freply11.php">To Police Station Staff</a>
+	        <a href="freply111.php">To Applicant</a>
+
+      
+    </div>
+  </div> 
+  
+
+    <div class="dropdown">
+    <button class="dropbtn">view 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="adnewcase1.php">New cases</a>
+      <a href="userscomment.php">Users comment</a>
+	    </div>
+  </div> 
+  
+    <div class="dropdown">
+    <button class="dropbtn">Send Announcements 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="ann1.php">To All</a>
+      <a href="ann11.php">To All AdminStaff</a>
+		      <a href="ann111.php">To All Station Staff</a>
+			   <a href="ann1111.php">To All Applicant</a>
+      
+      
+    </div>
+  </div> 
+   
+  
+   <a href="javascript:signout()">Signout</a>
+  
+   
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<style>
+body,
+.bg
+{
+background-image:url("./back/design6.jpg");
+background-repeat:no-repeat;
+background-size: cover;
+color: black;
+background-position: inherit;
+}
+</style>
+
+
+<style type="text/css">
+
+input[type=text],input[type=password]{
+width:80%;
+height:7px;
+border-radius: 7px;
+padding:7px;
+background-color:#FFFFCC;
+color:#FF0000;
+
+
+
+}
+input[type=submit],input[type=reset]{
+padding:10px;
+background-color:#FF0000;
+font-size: 14px;
+margin: 10px;
+width:auto;
+border-radius:20px;
+border: 1px solid #ff7101;
+color:#FFFFFF;
+
+}
+
+textarea {
+	
+	width: 90%;
+	height: 80px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius: 8px;
+	background-color:#FFFFCC;
+	color:#FF0000;
+}
+
+select {
+	
+	width: 80%;
+	height: 30px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius: 8px;
+	background-color:#FFFFCC;
+	color:#FF0000;
+}
+</style>
